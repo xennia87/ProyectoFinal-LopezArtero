@@ -1,0 +1,451 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
+
+@font-face {
+    font-family: 'Muli';
+    src: url('/fonts/Muli.ttf') format('truetype');
+}
+
+:root {
+    --darkest-brown: #664229;
+    --dark-brown: #987554;
+    --light-beige: #E5D3B3;
+    --lighest-beige: #f9f4f0;
+    --medium-beige: #D2B48C;
+    --dark-beige: #B99976;
+}
+
+body {
+    font-family:'Muli', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+/* Header */
+
+.header_container {
+    background-color: var(--lighest-beige);
+    height: 200px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    position: relative;
+    top: 20px;
+}
+
+.tabs_menu {
+    width: 100%;
+}
+
+.tabs_list {
+    display: flex;
+    flex-direction: row;
+}
+
+li.tab_link {
+    list-style: none;
+    margin-right: 10px;
+}
+
+.tab_link {
+    /* padding-bottom: 10px; */
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 1.3rem;
+}
+
+.tab_link[aria-selected="true"] {
+    border-bottom: 4px solid var(--darkest-brown);;
+    margin-bottom: -10px;
+}
+
+#create_article {
+    display: none;
+    cursor: pointer;
+}
+
+.login_button {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    display: flex;
+    flex-direction: row;
+}
+
+#login {
+    margin-top: 10px;
+}
+
+#username_banner {
+    margin-right: 20px;
+    font-size: .7rem;
+}
+
+.login_btn {
+    padding: 10px 20px;
+    background-color: var(--darkest-brown);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+/* New product modal */
+
+#productForm {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    font-size: .8rem;
+    grid-gap: 5px;
+}
+
+/* Main */
+
+.main_container {
+    background-color: var(--lighest-beige);
+    margin-top: 200px;
+    width: 100%;
+}
+
+/* Hero */
+
+.hero {
+    width: 100%;
+    height: 300px;
+    background-color: black;
+    background-image: url(docs/assets/hero.png);
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero_content {
+    text-align: center;
+    color: white;
+    z-index: 1;
+}
+
+#headerMessageContainer {
+    border-radius: 8px;
+    background-color: white;
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 10px;
+}
+
+#headerMessage {
+    text-align: center;
+    font-size: 1rem;
+    color: var(--dark-brown);
+}
+
+#closeMessage {
+    display: block;
+    align-self: flex-start;
+    color: var(--darkest-brown);
+}
+
+.close {
+    float: right;
+    cursor: pointer;
+}
+
+/* Cart & Cards Header */
+
+.products-header {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.content {
+    flex: 20%;
+    background-color: #f9f4f0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.separator {
+    flex: 40%;
+    border-bottom: 3px solid var(--darkest-brown);
+}
+
+/* Cart */
+
+.cards_cart {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 30px 0px;
+}
+
+.cart {
+    min-width: 20%;
+    max-width: 50%;
+    height: auto;
+    margin: 25px;
+    flex: 20%;
+}
+
+.cart_subheaders {
+    display: grid;
+    grid-template-columns: 2fr 0.5fr 1fr 0.5fr;
+    grid-gap: 8px;
+    font-size: .8em;
+    border-bottom: 1px solid var(--darkest-brown);
+}
+
+.cart_header {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.cart_product_list_container {
+    border: 1px solid var(--dark-beige);
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.cart_product_list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cart_product_item {
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+} */
+    display: grid;
+    grid-template-columns: 2fr 0.5fr 1fr 0.5fr;
+    align-items: center;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.cart_product_name {
+    line-height: 1;
+    font-size: 0.9rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    justify-self: flex-start;
+}
+
+small {
+    font-size: 0.7em;
+}
+
+.cart_total {
+    margin-top: auto;
+}
+
+.card_total_item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.cart_product_price {
+    font-size: 0.8em;
+}
+
+.cart_product_price::before {
+    content: "$";
+}
+
+.cart_product_quantity {
+    font-size: 0.7em;
+}
+
+.cart_product_total_sum {x
+    font-size: 1.5rem;
+}
+
+.cart_product_total_sum::before {
+    content: "$";
+}
+
+.cart_remove_item::before {
+    content: url(docs/assets/trash.svg);
+}
+
+/* Cards */
+
+.cards_container {
+    display: grid;
+    grid-gap: 25px;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 200px)); /* Ancho mínimo de 200px y ajuste automático */
+    grid-auto-flow: dense;
+    flex: 60%;
+    padding: 25px;
+}
+
+.card {
+    border: 1px solid darkgrey;
+    border-radius: 8px;
+    /* width: 100%;
+    min-width: 200px; */
+    height: 300px;
+    width: 200px;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.card_image {
+    height: 50%; /* Establecer el alto al 60% */
+}
+
+.card_image img {
+    width: 100%; /* La imagen ocupará todo el ancho del contenedor de la imagen */
+    height: 100%; /* La imagen ocupará todo el alto del contenedor de la imagen */
+    object-fit: cover; /* La imagen se ajustará al tamaño del contenedor manteniendo la relación de aspecto */
+}
+
+.card_text {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    padding: 4%;
+    background-color: white;
+    height: 40%;
+    align-content: stretch;
+    align-items: center;
+}
+
+.card_title {
+    font-size: 1em;
+    font-weight: bold;
+    /* height: 30%; */
+}
+
+.card_price {
+    font-size: 1.2em;
+    justify-self: end;
+}
+
+.card_price::before {
+    content: "$"
+}
+
+.card_description {
+    grid-column: span 2;
+    /* height: 30%; */
+    font-size: 0.8em;
+    align-self: start;
+}
+
+.card_submit {
+    grid-column: span 2;
+    margin-top: 5px;
+}
+
+
+button {
+    border: 0px;
+    background-color: var(--dark-beige);
+    color: white;
+    font-weight: bold;
+    padding: 8px 0px;
+    border-radius: 6px;
+    height: 30px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: var(--light-beige);
+}
+
+/* Footer */
+
+.footer_container {
+    background-color: var(--light-beige);
+    height: 80px;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 30px;
+}
+
+.footer_social > .bi {
+    margin-right: 10px;
+    font-size: 30px;
+    color: var(--darkest-brown);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: var(--lighest-beige);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el botón de cerrar */
+.close {
+    float: right;
+    cursor: pointer;
+    font-size: 40px;
+}
+
+/* Estilos para el popup de inicio */
+.alert_popup {
+    font-size: 14px;
+}
